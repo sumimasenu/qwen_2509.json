@@ -1,0 +1,521 @@
+{
+  "input": {
+    "workflow": {
+      "3": {
+        "inputs": {
+          "seed": 422594900855693,
+          "steps": 20,
+          "cfg": 2.5,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "75",
+            0
+          ],
+          "positive": [
+            "111",
+            0
+          ],
+          "negative": [
+            "110",
+            0
+          ],
+          "latent_image": [
+            "88",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "39",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "37": {
+        "inputs": {
+          "filename": "qwen_image_edit_2509_fp8_e4m3fn.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "38": {
+        "inputs": {
+          "filename": "qwen_2.5_vl_7b_fp8_scaled.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "39": {
+        "inputs": {
+          "filename": "qwen_image_vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "60": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "66": {
+        "inputs": {
+          "value": 3,
+          "model": [
+            "89",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingAuraFlow",
+        "_meta": {
+          "title": "ModelSamplingAuraFlow"
+        }
+      },
+      "75": {
+        "inputs": {
+          "value": 1,
+          "model": [
+            "66",
+            0
+          ]
+        },
+        "class_type": "CFGNorm",
+        "_meta": {
+          "title": "CFGNorm"
+        }
+      },
+      "78": {
+        "inputs": {
+          "image": "fcaad227b410d307e6196924fc52c63b.jpg"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "88": {
+        "inputs": {
+          "pixels": [
+            "93",
+            0
+          ],
+          "vae": [
+            "39",
+            0
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "89": {
+        "inputs": {
+          "filename": "Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+          "model": [
+            "37",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "93": {
+        "inputs": {
+          "text": "lanczos",
+          "image": [
+            "78",
+            0
+          ]
+        },
+        "class_type": "ImageScaleToTotalPixels",
+        "_meta": {
+          "title": "ImageScaleToTotalPixels"
+        }
+      },
+      "106": {
+        "inputs": {
+          "image": "image_qwen_image_edit_2509_input_image.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "108": {
+        "inputs": {
+          "image": "image_qwen_image_edit_2509_input_image.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "110": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "38",
+            0
+          ],
+          "vae": [
+            "39",
+            0
+          ],
+          "image1": [
+            "93",
+            0
+          ],
+          "image2": [
+            "106",
+            0
+          ],
+          "image3": [
+            "108",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "_meta": {
+          "title": "TextEncodeQwenImageEditPlus"
+        }
+      },
+      "111": {
+        "inputs": {
+          "text": "Make this girl without any makeup or accessories, in a simple black top, on a white background",
+          "clip": [
+            "38",
+            0
+          ],
+          "vae": [
+            "39",
+            0
+          ],
+          "image1": [
+            "93",
+            0
+          ],
+          "image2": [
+            "106",
+            0
+          ],
+          "image3": [
+            "108",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "_meta": {
+          "title": "TextEncodeQwenImageEditPlus"
+        }
+      },
+      "112": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "335": {
+        "inputs": {
+          "value": 1,
+          "model": [
+            "339",
+            0
+          ]
+        },
+        "class_type": "CFGNorm",
+        "_meta": {
+          "title": "CFGNorm"
+        }
+      },
+      "336": {
+        "inputs": {
+          "samples": [
+            "340",
+            0
+          ],
+          "vae": [
+            "337",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "337": {
+        "inputs": {
+          "filename": "qwen_image_vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "338": {
+        "inputs": {
+          "filename": "qwen_2.5_vl_7b_fp8_scaled.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "339": {
+        "inputs": {
+          "value": 3,
+          "model": [
+            "354",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingAuraFlow",
+        "_meta": {
+          "title": "ModelSamplingAuraFlow"
+        }
+      },
+      "340": {
+        "inputs": {
+          "seed": 348723091704567,
+          "steps": 4,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "335",
+            0
+          ],
+          "positive": [
+            "383",
+            0
+          ],
+          "negative": [
+            "383",
+            1
+          ],
+          "latent_image": [
+            "375",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "341": {
+        "inputs": {
+          "filename": "qwen_image_edit_2509_fp8_e4m3fn.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "342": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "336",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "343": {
+        "inputs": {
+          "image": "image_qwen_image_edit_2509_input_image.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "344": {
+        "inputs": {
+          "image": "image_qwen_image_edit_2509_input_image.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "345": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "347": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "338",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "_meta": {
+          "title": "TextEncodeQwenImageEditPlus"
+        }
+      },
+      "348": {
+        "inputs": {
+          "text": "让图 2 的机器人按照图 3 的姿势出现在图 1 的场景中",
+          "clip": [
+            "338",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "_meta": {
+          "title": "TextEncodeQwenImageEditPlus"
+        }
+      },
+      "349": {
+        "inputs": {
+          "image": "image_qwen_image_edit_2509_input_image.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "354": {
+        "inputs": {
+          "filename": "Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+          "model": [
+            "341",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "375": {
+        "inputs": {
+          "pixels": [
+            "349",
+            0
+          ],
+          "vae": [
+            "337",
+            0
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "376": {
+        "inputs": {
+          "pixels": [
+            "343",
+            0
+          ],
+          "vae": [
+            "337",
+            0
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "377": {
+        "inputs": {
+          "pixels": [
+            "344",
+            0
+          ],
+          "vae": [
+            "337",
+            0
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "383": {
+        "inputs": {
+          "latent_2": [
+            "375",
+            0
+          ],
+          "latent": [
+            "376",
+            0
+          ],
+          "latent_1": [
+            "377",
+            0
+          ],
+          "conditioning": [
+            "348",
+            0
+          ],
+          "conditioning_1": [
+            "347",
+            0
+          ]
+        },
+        "class_type": "c46c74c1-cfc4-41eb-81a8-9c6701737ef6",
+        "_meta": {
+          "title": "c46c74c1-cfc4-41eb-81a8-9c6701737ef6"
+        }
+      }
+    }
+  }
+}
